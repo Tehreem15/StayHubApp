@@ -27,23 +27,7 @@ import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-const initialData = Array.from({ length: 25 }, (_, index) => ({
-  id: index.toString(),
-  date: `2024-08-${index + 1}`, // Dummy date
-  day: [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ][index % 7],
-  roomName: `Room ${(index % 3) + 1}`, // Dummy room names
-  price: `$${(index + 1) * 10}`,
-  addPricePerPerson: `$${(index + 1) * 2}`,
-  bookingAvailable: index % 2 === 0 ? "Yes" : "No",
-}));
+
 const addEditSchema = Yup.object().shape({
   status: Yup.string().required("Required"),
   rooms: Yup.array().min(1, "At least select one"),
