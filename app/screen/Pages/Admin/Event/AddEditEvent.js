@@ -43,13 +43,7 @@ const addEditSchema = Yup.object().shape({
   eventImage: Yup.string().notRequired(),
   startTime: Yup.string().required("Required"),
   endTime: Yup.string()
-    .required("Required")
-    .test("is-greater", "End time must be after start time", function (value) {
-      const { startTime } = this.parent;
-      const startDate = timeStringToDate(startTime);
-      const endDate = timeStringToDate(value);
-      return endDate > startDate;
-    }),
+    .required("Required"),
   location: Yup.string().required("Required"),
   adultTicketPrice: Yup.number().min(0, "Must be positive"),
   childTicketPrice: Yup.number().min(0, "Must be positive"),
