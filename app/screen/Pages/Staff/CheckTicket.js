@@ -135,7 +135,7 @@ const CheckTicketContent = ({ navigation }) => {
         {ticketData && (
           <View style={styles.ticketContainer}>
             <Image
-              source={{ uri: "https://via.placeholder.com/100" }}
+              source={require("../../../../assets/images/logo.png")}
               style={styles.logo}
               resizeMode="contain"
             />
@@ -268,10 +268,10 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     alignSelf: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 22,
